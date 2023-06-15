@@ -40,7 +40,7 @@ local_scheme="no-local-version"
 "Bug Tracker" = "https://github.com/jfsanchez91/props2yaml/issues"
 
 [project.scripts]
-p2y = "props2yaml:main"
+props2yaml = "props2yaml.main:main"
 
 [tool.black]
 line-length = 120
