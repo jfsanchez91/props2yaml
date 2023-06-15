@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-import sys
 import argparse
+import sys
 
 from props2yaml import __version__
 from props2yaml import convert_properties_to_yaml

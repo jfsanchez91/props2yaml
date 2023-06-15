@@ -1,5 +1,6 @@
 import yaml
 from props2yaml.converter import convert_properties_to_yaml
+from yaml import FullLoader
 
 
 def test_converter():
@@ -12,7 +13,7 @@ def test_converter():
     config.key3.value.value2="abc"
     """
     converted = convert_properties_to_yaml(properties)
-    yml = yaml.load(converted)
+    yml = yaml.load(converted, Loader=FullLoader)
     assert yml is not None
     assert yml["config"]["props"]["value"] == "50"
     assert yml["config"]["key"]["value"] == "150"
