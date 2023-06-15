@@ -32,6 +32,8 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme="no-local-version"
 
 [project.urls]
 "Homepage" = "https://github.com/jfsanchez91/props2yaml"
