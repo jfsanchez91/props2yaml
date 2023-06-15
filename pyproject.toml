@@ -1,0 +1,40 @@
+[project]
+name = "props2yaml"
+version = "0.0.1"
+authors = [
+    { name = "Jorge F. Sánchez", email = "props2yaml@jfsanchez.net" },
+]
+description = "Convert .properties files into .yaml"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "yaml",
+    "properties",
+    "converter",
+]
+dependencies = [
+    "pyyaml",
+]
+dev-dependencies = [
+    "black",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.urls]
+"Homepage" = "https://github.com/jfsanchez91/props2yaml"
+"Bug Tracker" = "https://github.com/jfsanchez91/props2yaml/issues"
+
+[project.scripts]
+p2y = "props2yaml:main"
+
+[tool.black]
+line-length = 120
