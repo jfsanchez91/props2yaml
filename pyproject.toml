@@ -5,7 +5,7 @@ authors = [
 ]
 description = "Convert .properties files into .yaml"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -20,21 +20,18 @@ keywords = [
 dependencies = [
     "pyyaml",
 ]
-dev-dependencies = [
-    "black",
-]
 dynamic = [
     "version",
 ]
 
-[tool.hatch.version]
-path = "src/props2yaml/__version__.py"
-
 [build-system]
 requires = [
-    "hatchling",
+    "setuptools>=45",
+    "setuptools_scm[toml]>=7.1"
 ]
-build-backend = "hatchling.build"
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
 
 [project.urls]
 "Homepage" = "https://github.com/jfsanchez91/props2yaml"
