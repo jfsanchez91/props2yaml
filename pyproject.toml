@@ -1,6 +1,5 @@
 [project]
 name = "props2yaml"
-version = "0.0.1"
 authors = [
     { name = "Jorge F. Sánchez", email = "props2yaml@jfsanchez.net" },
 ]
@@ -24,9 +23,17 @@ dependencies = [
 dev-dependencies = [
     "black",
 ]
+dynamic = [
+    "version",
+]
+
+[tool.hatch.version]
+path = "src/props2yaml/__version__.py"
 
 [build-system]
-requires = ["hatchling"]
+requires = [
+    "hatchling",
+]
 build-backend = "hatchling.build"
 
 [project.urls]
