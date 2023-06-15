@@ -1,8 +1,8 @@
 name: release
 
 on:
-  push:
-    branches: [ master ]
+  release:
+    types: [ published ]
 
 jobs:
   build:
@@ -25,12 +25,12 @@ jobs:
           path: ./dist
 
   publish:
-    name: Publish to TestPyPI
+    name: Publish release to PyPi
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: staging
-      url: https://test.pypi.org/project/props2yaml/
+      name: release
+      url: https://pypi.org/project/props2yaml/
     permissions:
       id-token: write
     steps:
@@ -39,7 +39,5 @@ jobs:
         with:
           name: dist
           path: ./dist
-      - name: Publish distribution 📦 to TestPyPI
+      - name: Publish distribution 📦 to PyPi
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
